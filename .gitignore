@@ -5,6 +5,8 @@
 ios/Pods
 ios/build
 
+vendor/
+
 ### ReactNative ###
 # React Native Stack Base
 
