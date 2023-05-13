@@ -12,6 +12,7 @@ import Root from './src/containers/Root'
 import initStore from './src/store';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import DiaryWriting from './src/screens/diaryWriting/diaryWriting';
 
 const store = initStore();
 const Stack = createStackNavigator();
@@ -21,12 +22,18 @@ export default class App extends Component {
     return (
       <NavigationContainer>
         <Provider store={store}>
-          <Stack.Navigator initialRouteName='Root'>
+          {/* <Root /> */}
+          <Stack.Navigator initialRouteName='Menual'>
             <Stack.Screen
-              name='Root'
+              name='Menual'
               component={Root}
             />
-            </Stack.Navigator>
+
+            <Stack.Screen
+              name='DiaryWriting'
+              component={DiaryWriting}
+              />
+          </Stack.Navigator>
         </Provider>
       </NavigationContainer>
     );
