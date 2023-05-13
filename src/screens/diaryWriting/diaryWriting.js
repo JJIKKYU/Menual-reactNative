@@ -1,12 +1,23 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { theme } from "../../designSystem/colors/menualColor";
 
-function DiaryDetail() {
+function DiaryWriting() {
     return (
-        <View>
-            <Text>Diary Detail</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>Diary Writing!!!!!!!!진균이는 수진이꺼!!!!!!</Text>
         </View>
     );
 }
 
-export default DiaryDetail;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: theme.background
+    },
+    title: {
+        color: theme.grey[100]
+    }
+});
+
+export default DiaryWriting;

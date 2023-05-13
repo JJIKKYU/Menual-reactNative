@@ -13,6 +13,7 @@ import initStore from './src/store';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import DiaryWriting from './src/screens/diaryWriting/diaryWriting';
+import Header from './src/designSystem/header/Header';
 
 const store = initStore();
 const Stack = createStackNavigator();
@@ -23,7 +24,9 @@ export default class App extends Component {
       <NavigationContainer>
         <Provider store={store}>
           {/* <Root /> */}
-          <Stack.Navigator initialRouteName='Menual'>
+          <Stack.Navigator
+            initialRouteName='Menual'
+            screenOptions={{ header: (props) => <Header {...props} />}}>
             <Stack.Screen
               name='Menual'
               component={Root}
