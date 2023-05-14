@@ -6,54 +6,91 @@ import HeaderTypes from "./HeaderTypes";
 
 import fullLogo from "../../../assets/images/logo/full.png";
 import symbol from "../../../assets/images/logo/symbol.png";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 
 
 const Header = ({ type, name, header }) => {
     const navigation = useNavigation();
+    const { top } = useSafeAreaInsets();
 
-    const headerLayout = ({ }) => {
-
-        console.log("headerType2 = ", type);
-    
-        switch (type) {
-            case HeaderTypes.main:
-            break;
-    
-            case HeaderTypes.detail:
-            break;
-    
-            case HeaderTypes.writing:
-            break;
-        }
-
-        return (
-            <View style={styles.container}>
-                {/* <Image source={fullLogo} style={styles.logo}></Image> */}
-                <Text style={styles.title}>{type}</Text>
-                <TouchableOpacity style={styles.backButton}>
-                    <Image source={symbol}></Image>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.right1Button}>
-                    <Image source={symbol}></Image>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.right2Button}>
-                    <Image source={symbol}></Image>
-                </TouchableOpacity>
-            </View>
-        );
-    }
+    console.log("top1 = ", top);
 
     return (
         headerLayout(type)
     );
 }
 
+const headerLayout = ( type ) => {
+    const { top } = useSafeAreaInsets();
+
+    const headerTypes = {
+        [HeaderTypes.main]: {
+            needRightButton1: true,
+            needRightButton2: true,
+            needLogo: true
+        },
+        [HeaderTypes.detail]: {
+            needRightButton1: true,
+            needRightButton2: true,
+            needBackButton: true,
+            needTitle: true
+        },
+        [HeaderTypes.writing]: {
+            needRightButton1: true,
+            needCloseButton: true,
+        }
+    }
+
+    const headerConfig = headerTypes[type] || {};
+
+    const {
+        needRightButton1 = false,
+        needRightButton2 = false,
+        needBackButton = false,
+        needTitle = false,
+        needLogo = false,
+        needCloseButton = false,
+    } = headerConfig;
+
+    return (
+        <View style={[styles.container, {paddingTop: top + 45 } ]}>
+            {needLogo &&
+                <Image source={fullLogo} style={styles.logo}></Image>            
+            }
+
+            {needTitle &&
+                <Text style={styles.title}>{type}</Text>
+            }
+            {needBackButton &&
+                <TouchableOpacity style={styles.backButton}>
+                    <Image source={symbol}></Image>
+                </TouchableOpacity>
+            }
+
+            {needRightButton1 &&
+                <TouchableOpacity style={styles.right1Button}>
+                    <Image source={symbol}></Image>
+                </TouchableOpacity>
+            }
+
+            {needRightButton2 &&
+                <TouchableOpacity style={styles.right2Button}>
+                    <Image source={symbol}></Image>
+                </TouchableOpacity>
+            }
+        </View>
+    );
+}
+
 const styles = StyleSheet.create({
     container: {
-        height: 88,
-        backgroundColor: theme.background
+        height: 45,
+        // backgroundColor: theme.background
+        backgroundColor: theme.main[800],
+        paddingTop: 100,
+    },
+    safeArea: {
+        backgroundColor: theme.main[700]
     },
     title: {
         position: 'absolute',

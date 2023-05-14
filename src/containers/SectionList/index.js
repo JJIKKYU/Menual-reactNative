@@ -36,6 +36,11 @@ const SectionListContainer = ({ }) => {
             ]
         }
     ];
+
+    const boxButtonHandlePress = () => {
+        navigation.navigate("DiaryWriting", { presentation: 'fullScreenModal' })
+    };
+    
     return (
         <View style={styles.container}>
             <SectionList
@@ -52,7 +57,7 @@ const SectionListContainer = ({ }) => {
                 renderItem={({ item }) => (
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate('DiaryWriting')
+                            navigation.navigate('DiaryDetail')
                         }}
                     >
                         <MenualList
@@ -69,10 +74,14 @@ const SectionListContainer = ({ }) => {
                 keyExtractor={(item) => item.id}
             />
 
-            <BoxButton style={styles.boxButton}></BoxButton>
+            <BoxButton
+                onPressCallback={boxButtonHandlePress}
+                style={styles.boxButton}
+            />
         </View>
     );
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

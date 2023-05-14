@@ -15,14 +15,16 @@ import DiaryWriting from './src/screens/diaryWriting/diaryWriting';
 import Header from './src/designSystem/header/Header';
 import HeaderTypes from './src/designSystem/header/HeaderTypes';
 import DiaryHome from './src/screens/diaryHome';
+import DiaryDetail from './src/screens/diaryDetail';
 
 const store = initStore();
 const Stack = createStackNavigator();
+const RootStack = createStackNavigator()
 
 export default class App extends Component {
   render() {
     return (
-      <NavigationContainer>
+      <NavigationContainer options={{ presentation: 'fullScreenModal'}}>
         <Provider store={store}>
           <Stack.Navigator
             initialRouteName='Menual'>
@@ -38,7 +40,16 @@ export default class App extends Component {
               name='DiaryWriting'
               component={DiaryWriting}
               options={{
+                presentation: 'modal',
                 header: (props) => <Header {...props} type={HeaderTypes.writing} />
+              }}
+              />
+
+            <Stack.Screen
+              name='DiaryDetail'
+              component={DiaryDetail}
+              options={{
+                header: (props) => <Header {...props} type={HeaderTypes.detail} />
               }}
               />
           </Stack.Navigator>

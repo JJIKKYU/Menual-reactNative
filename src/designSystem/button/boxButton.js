@@ -3,15 +3,13 @@ import { Text, View, TouchableHighlight, StyleSheet } from "react-native";
 import { theme } from "../colors/menualColor";
 import { useNavigation } from "@react-navigation/native";
 
-const BoxButton = ({ }) => {
+const BoxButton = ({ onPressCallback }) => {
     const navigation = useNavigation();
 
     return (
         <TouchableHighlight
         underlayColor={theme.sub[600]}
-        onPress={() => {
-            navigation.navigate('DiaryWriting')
-        }}
+        onPress={onPressCallback}
         >
             <View style={styles.container}>
                 <Text style={styles.title}>22번째 메뉴얼 작성하기</Text>
