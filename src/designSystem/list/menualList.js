@@ -64,9 +64,12 @@ const styles = StyleSheet.create({
     },
     title: {
         color: theme.grey[200],
+        felx: 1,
+        height: 21,
     },
     hideTitle: {
         color: theme.grey[600],
+        height: 21,
     },
     informationContainer: {
         marginTop: 2,

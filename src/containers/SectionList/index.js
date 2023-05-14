@@ -41,7 +41,7 @@ const SectionListContainer = ({ }) => {
             <SectionList
                 stickySectionHeadersEnabled={false}
                 sections={data}
-                contentInset={{ bottom: 100, top: 0 }}
+                contentContainerStyle={{ paddingBottom: 100, }}
                 renderSectionHeader={({ section: { section } }) => (
                 <View style={styles.listHeaderContainer}>
                     <ListHeader
