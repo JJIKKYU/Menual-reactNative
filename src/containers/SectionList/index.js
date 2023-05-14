@@ -17,11 +17,12 @@ const SectionListContainer = ({ }) => {
         {
             section: "2022.12",
             data: [
-                { id: 1, title: "메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1", date: "2010.99.99. HH:MM", page: "999", reply: "10", image: "url" },
-                { id: 2, title: "메뉴얼2", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
-                { id: 3, title: "메뉴얼3", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
-                { id: 4, title: "메뉴얼4", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
-                { id: 5, title: "메뉴얼5", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
+                { id: 1, title: "메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1", date: "2010.99.99. HH:MM", page: "999", reply: "3", image: "url", isHide: false, },
+                { id: 2, title: "메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1", date: "2010.99.99. HH:MM", page: "999", reply: "4", image: null, isHide: false, },
+                { id: 3, title: "메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1", date: "2010.99.99. HH:MM", page: "999", reply: null, image: null, isHide: false, },
+                { id: 4, title: "메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1", date: "2010.99.99. HH:MM", page: "999", reply: "3", image: null, isHide: false, },
+                { id: 5, title: "메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1", date: "2010.99.99. HH:MM", page: "999", reply: "10", image: null, isHide: true, },
+                { id: 6, title: "메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1", date: "2010.99.99. HH:MM", page: "999", reply: null, image: "url", isHide: false, },
             ]
         },
         {
@@ -42,7 +43,7 @@ const SectionListContainer = ({ }) => {
                 sections={data}
                 contentInset={{ bottom: 100, top: 0 }}
                 renderSectionHeader={({ section: { section } }) => (
-                <View>
+                <View style={styles.listHeaderContainer}>
                     <ListHeader
                         title={section}
                     />
@@ -59,6 +60,8 @@ const SectionListContainer = ({ }) => {
                         date={item.date}
                         page={item.page}
                         reply={item.reply}
+                        isHide={item.isHide}
+                        image={item.image}
                         type={menualCellTypes.list}
                     />
                     </TouchableOpacity>
@@ -75,8 +78,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: theme.background
     },
-    boxButton: {
-        width: 80,
+    listHeaderContainer: {
+        marginTop: 70
     }
 });
 
