@@ -38,7 +38,7 @@ const SectionListContainer = ({ }) => {
     ];
 
     const boxButtonHandlePress = () => {
-        navigation.navigate("DiaryWriting", { presentation: 'fullScreenModal' })
+        navigation.navigate("DiaryWriting", { presentation: 'modal' })
     };
     
     return (

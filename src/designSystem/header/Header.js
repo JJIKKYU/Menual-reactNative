@@ -85,8 +85,8 @@ const headerLayout = ( type ) => {
 const styles = StyleSheet.create({
     container: {
         height: 45,
-        // backgroundColor: theme.background
-        backgroundColor: theme.main[800],
+        backgroundColor: theme.background,
+        // backgroundColor: theme.main[800],
         paddingTop: 100,
     },
     safeArea: {
