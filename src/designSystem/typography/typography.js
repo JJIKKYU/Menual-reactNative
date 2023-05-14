@@ -34,27 +34,33 @@ const typography = {
         title: {
             1: {
                 fontFamily: fontFamilyTypes.SpoqaHanSansNeoBold,
-                fontSize: 12
+                fontSize: 12,
+                lineHeight: 24,
             },
             2: {
                 fontFamily: fontFamilyTypes.SpoqaHanSansNeoBold,
-                fontSize: 14
+                fontSize: 14,
+                lineHeight: 24,
             },
             3: {
                 fontFamily: fontFamilyTypes.SpoqaHanSansNeoBold,
-                fontSize: 16
+                fontSize: 16,
+                lineHeight: 24,
             },
             4: {
                 fontFamily: fontFamilyTypes.SpoqaHanSansNeoBold,
-                fontSize: 18
+                fontSize: 18,
+                lineHeight: 24,
             },
             5: {
                 fontFamily: fontFamilyTypes.SpoqaHanSansNeoBold,
-                fontSize: 21
+                fontSize: 21,
+                lineHeight: 24,
             },
             6: {
                 fontFamily: fontFamilyTypes.SpoqaHanSansNeoBold,
-                fontSize: 24
+                fontSize: 24,
+                lineHeight: 24,
             }
         },
         body: {
