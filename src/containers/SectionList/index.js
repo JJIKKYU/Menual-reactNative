@@ -40,7 +40,9 @@ const SectionListContainer = ({ }) => {
     return (
         <View style={styles.container}>
             <SectionList
+                stickySectionHeadersEnabled={false}
                 sections={data}
+                contentInset={{ bottom: 100, top: 0 }}
                 renderSectionHeader={({ section: { section } }) => (
                 <View>
                     <ListHeader

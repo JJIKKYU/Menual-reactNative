@@ -1,17 +1,12 @@
 import React, { Componenet } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import Main from '../Main';
-import SectionListContainer from "../SectionList";
-import { theme } from "../../designSystem/colors/menualColor";
-import BoxButton from "../../designSystem/boxButton/boxButton";
+import SectionListContainer from "../containers/SectionList";
+import { theme } from "../designSystem/colors/menualColor";
 
-const Root = ({ navigation }) => {
+const DiaryHome = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            {/* <Text style={{ marginLeft:20, marginTop:100, fontSize:24 }}>React Native Redux Sample</Text> */}
-            {/* <Main /> */}
             <SectionListContainer />
-            {/* <BoxButton style={styles.boxButton}></BoxButton> */}
         </View>
     );
 }
@@ -41,4 +36,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Root;
+export default DiaryHome;

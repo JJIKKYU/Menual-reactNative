@@ -1,14 +1,21 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import { theme } from "../colors/menualColor";
+import HeaderTypes from "./HeaderTypes";
 
-const Header = ({ name }) => {
+import fullLogo from "../../../assets/images/logo/full.png";
+
+
+const Header = ({ type, name, header }) => {
     const navigation = useNavigation();
+
+    console.log("headerType = " + type);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Menual</Text>
+            <Image source={fullLogo} style={styles.logo}></Image>
+            <Text style={styles.title}></Text>
         </View>
     );
 }
@@ -28,6 +35,11 @@ const styles = StyleSheet.create({
         right: 0,
         textAlign: 'center',
         fontWeight: 'bold',
+    },
+    logo: {
+        position: 'absolute',
+        bottom: 10,
+        left: 20,
     }
 });
 
