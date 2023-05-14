@@ -6,7 +6,7 @@ import typography from "../typography/typography";
 const ListHeader = ({ title }) => {
     return (
         <View style={styles.container}>
-            <Text style={typography.text.head[1]}>{title}</Text>
+            <Text style={[styles.title, typography.text.head[5]]}>{title}</Text>
         </View>
     );
 }
@@ -19,10 +19,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
     },
     title: {
-        fontSize: 28,
         color: theme.grey[400],
-        fontWeight: 'bold',
-        fontFamily: "SpoqaHanSansNeo-Bold",
     }
 });
 

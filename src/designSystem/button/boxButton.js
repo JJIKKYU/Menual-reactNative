@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, View, TouchableHighlight, StyleSheet } from "react-native";
 import { theme } from "../colors/menualColor";
 import { useNavigation } from "@react-navigation/native";
 
@@ -7,7 +7,8 @@ const BoxButton = ({ }) => {
     const navigation = useNavigation();
 
     return (
-        <TouchableOpacity
+        <TouchableHighlight
+        underlayColor={theme.sub[600]}
         onPress={() => {
             navigation.navigate('DiaryWriting')
         }}
@@ -15,7 +16,7 @@ const BoxButton = ({ }) => {
             <View style={styles.container}>
                 <Text style={styles.title}>22번째 메뉴얼 작성하기</Text>
             </View>
-        </TouchableOpacity>
+        </TouchableHighlight>
     );
 }
 
