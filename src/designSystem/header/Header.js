@@ -13,6 +13,23 @@ const Header = ({ type, name, header }) => {
     console.log("headerType = " + type);
 
     return (
+        headerLayout(type)
+    );
+}
+
+const headerLayout = ({ type }) => {
+
+    switch (type) {
+        case HeaderTypes.main:
+        break;
+
+        case HeaderTypes.detail:
+        break;
+
+        case HeaderTypes.writing:
+        break;
+    }
+    return (
         <View style={styles.container}>
             <Image source={fullLogo} style={styles.logo}></Image>
             <Text style={styles.title}></Text>

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 28,
         color: theme.grey[400],
-        fontWeight: 'bold'
+        fontFamily: "SpoqaHanSansNeo-Bold"
     }
 });
 
