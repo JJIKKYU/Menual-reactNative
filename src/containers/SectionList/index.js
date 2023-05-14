@@ -6,7 +6,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { theme } from '../../designSystem/colors/menualColor';
 import ListHeader from '../../designSystem/listHeader/listHeader';
-import BoxButton from '../../designSystem/boxButton/boxButton';
+import BoxButton from '../../designSystem/button/boxButton';
+import MenualList from '../../designSystem/list/menualList';
 
 // export default class SectionListContainer extends React.Component {
 const SectionListContainer = ({ }) => {
@@ -16,24 +17,21 @@ const SectionListContainer = ({ }) => {
         {
             section: "2022.12",
             data: [
-                { id: 1, title: "양수진 사랑해", information: "2010.99.99. HH:MM | P.999" },
-                { id: 2, title: "진균이가 더 사랑해", information: "2099.99.99. HH:MM | P.999" },
-                { id: 3, title: "내꽁아~", information: "2099.99.99. HH:MM | P.999" },
-                { id: 4, title: "하뚜하뚜우", information: "2099.99.99. HH:MM | P.999" },
-                { id: 5, title: "❤️ 수징아", information: "2099.99.99. HH:MM | P.999" },
+                { id: 1, title: "메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1메뉴얼1", date: "2010.99.99. HH:MM", page: "999", reply: "10", image: "url" },
+                { id: 2, title: "메뉴얼2", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
+                { id: 3, title: "메뉴얼3", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
+                { id: 4, title: "메뉴얼4", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
+                { id: 5, title: "메뉴얼5", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
             ]
         },
         {
             section: "2022.11",
             data: [
-                { id: 6, title: "Item 1", information: "2099.99.99. HH:MM | P.999" },
-                { id: 7, title: "Item 2", information: "2099.99.99. HH:MM | P.999" },
-                { id: 8, title: "Item 1", information: "2099.99.99. HH:MM | P.999" },
-                { id: 9, title: "Item 2", information: "2099.99.99. HH:MM | P.999" },
-                { id: 10, title: "Item 1", information: "2099.99.99. HH:MM | P.999" },
-                { id: 11, title: "Item 2", information: "2099.99.99. HH:MM | P.999" },
-                { id: 12, title: "Item 1", information: "2099.99.99. HH:MM | P.999" },
-                { id: 13, title: "Item 2", information: "2099.99.99. HH:MM | P.999" },
+                { id: 6, title: "메뉴얼6", date: "2010.99.99. HH:MM", page: "999", reply: "10", image: "url" },
+                { id: 7, title: "메뉴얼7", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
+                { id: 8, title: "메뉴얼8", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
+                { id: 9, title: "메뉴얼9", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
+                { id: 10, title: "메뉴얼10", date: "2010.99.99. HH:MM", page: "999", reply: "10" },
             ]
         }
     ];
@@ -56,9 +54,11 @@ const SectionListContainer = ({ }) => {
                             navigation.navigate('DiaryWriting')
                         }}
                     >
-                        <MenualCell
+                        <MenualList
                         title={item.title}
-                        information={item.information}
+                        date={item.date}
+                        page={item.page}
+                        reply={item.reply}
                         type={menualCellTypes.list}
                     />
                     </TouchableOpacity>
